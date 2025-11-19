@@ -137,7 +137,7 @@ services:
       - TZ=America/Chicago
 
   prowlarr:
-    image: lscr.io/linuxserver/prowlarr:latest@sha256:643220338204525524db787ff38a607261597f49d1f550694acdb3e908e2b43e
+    image: lscr.io/linuxserver/prowlarr:latest@sha256:3dd3a316f60ea4e6714863286549a6ccaf0b8cf4efe5578ce3fe0e85475cb1cf
     pull_policy: ${pull_policy}
     container_name: ${prowlarr_container_name}
     restart: ${restart}
