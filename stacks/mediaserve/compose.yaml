@@ -55,7 +55,7 @@ services:
       - homarr-appdata:/appdata
 
   emby:
-    image: lscr.io/linuxserver/emby:latest@sha256:8a0a5ae9844c83380fa72c9964c0212f5d1488ea61ecc0adac64a5ab49c83cb1
+    image: lscr.io/linuxserver/emby:latest@sha256:7db38baaa3e6adb80b77ca012581cc744a6cb07d80adafa034763b20a6313b88
     pull_policy: ${pull_policy}
     container_name: ${emby_container_name}
     restart: ${restart}
