@@ -89,7 +89,7 @@ services:
       - /dev/net/tun:/dev/net/tun
 
   qbittorrent:
-    image: lscr.io/linuxserver/qbittorrent:latest@sha256:a5b277bd1cb098dcba6215ab03ada24c28101ac16022e0e6c1ffed40743d4448
+    image: lscr.io/linuxserver/qbittorrent:latest@sha256:9752b4f8300d19e9d9157ea400d9d95547365ac0379cbf82cdff477b59b7f264
     pull_policy: ${pull_policy}
     container_name: ${qbittorrent_container_name}
     restart: ${restart}
