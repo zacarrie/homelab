@@ -19,7 +19,7 @@ volumes:
 
 services:
   calibre:
-    image: lscr.io/linuxserver/calibre-web:latest
+    image: lscr.io/linuxserver/calibre:latest
     pull_policy: ${pull_policy}
     container_name: ${calibre_container_name}
     restart: ${restart}
@@ -27,7 +27,7 @@ services:
       caddy:
         ipv4_address: 30.30.30.45
     ports:
-      - ${calibre_port_8083}:8083
+      - ${calibre_port_8181}:8181
     environment:
       - TZ=${timezone}
       - PUID=1000
