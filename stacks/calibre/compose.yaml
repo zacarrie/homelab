@@ -1,0 +1,37 @@
+---
+include:
+  - ../components/caddy_network.yaml
+
+#networks:
+
+volumes:
+  calibre-config:
+    external: true
+  media_books:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: ${NFS_O}
+      device: ":${NFS_DEVICE_MEDIA}/books"
+
+
+#secrets:
+
+services:
+  calibre:
+    image: lscr.io/linuxserver/calibre-web:latest
+    pull_policy: ${pull_policy}
+    container_name: ${calibre_container_name}
+    restart: ${restart}
+    networks:
+      caddy:
+        ipv4_address: 30.30.30.45
+    ports:
+      - ${calibre_port_8083}:8083
+    environment:
+      - TZ=${timezone}
+      - PUID=1000
+      - PGID=1000 
+    volumes:
+      - calibre-config:/config
+      - media_books:/books
