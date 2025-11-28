@@ -80,11 +80,16 @@ lidarr.{$CADDY_PRIVATE_DOMAIN} {
     reverse_proxy gluetunmediarr:8686
     import cloudflare
 }
-# calibre
-calibre.{$CADDY_PRIVATE_DOMAIN} {
-    reverse_proxy calibre:8083 {
+# calibreweb
+calibreweb.{$CADDY_PRIVATE_DOMAIN} {
+    reverse_proxy calibreweb:8083 {
              header_up X-Scheme https
         }
+    import cloudflare
+}
+# calibreserver
+calibreserver.{$CADDY_PRIVATE_DOMAIN} {
+    reverse_proxy calibreserver:8080
     import cloudflare
 }
 
