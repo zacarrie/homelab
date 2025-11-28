@@ -18,20 +18,38 @@ volumes:
 #secrets:
 
 services:
-  calibre:
+  calibreweb:
     image: lscr.io/linuxserver/calibre-web:latest
     pull_policy: ${pull_policy}
-    container_name: ${calibre_container_name}
+    container_name: ${calibreweb_container_name}
     restart: ${restart}
     networks:
       caddy:
         ipv4_address: 30.30.30.45
     ports:
-      - ${calibre_port_8083}:8083
+      - ${calibreweb_port_8083}:8083
     environment:
       - TZ=${timezone}
       - PUID=1000
       - PGID=1000 
     volumes:
       - calibre-config:/config
+      - media_books:/books
+
+  calibreserver:
+    image: lscr.io/linuxserver/calibre:latest
+    pull_policy: ${pull_policy}
+    container_name: ${calibreserver_container_name}
+    restart: ${restart}
+    networks:
+      caddy:
+        ipv4_address: 30.30.30.50
+    ports:
+      - ${calibreserver_port_8181}:8181
+    environment:
+      - TZ=${timezone}
+      - PUID=1000
+      - PGID=1000 
+    volumes:
+      - calibreserver-config:/config
       - media_books:/books
