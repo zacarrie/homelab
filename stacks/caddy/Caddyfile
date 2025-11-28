@@ -82,7 +82,9 @@ lidarr.{$CADDY_PRIVATE_DOMAIN} {
 }
 # calibre
 calibre.{$CADDY_PRIVATE_DOMAIN} {
-    reverse_proxy calibre:8083
+    reverse_proxy calibre:8083 {
+             header_up X-Scheme https
+        }
     import cloudflare
 }
 
