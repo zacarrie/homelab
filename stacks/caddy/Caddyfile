@@ -80,7 +80,11 @@ lidarr.{$CADDY_PRIVATE_DOMAIN} {
     reverse_proxy gluetunmediarr:8686
     import cloudflare
 }
-
+# calibre
+calibre.{$CADDY_PRIVATE_DOMAIN} {
+    reverse_proxy calibre:8083
+    import cloudflare
+}
 
 #------------------------------------------------
 # main komodo server
