@@ -5,7 +5,9 @@ include:
 #networks:
 
 volumes:
-  calibre-config:
+  calibreweb-config:
+    external: true
+  calibreserver-config:
     external: true
   media_books:
     driver: local
@@ -33,7 +35,7 @@ services:
       - PUID=1000
       - PGID=1000 
     volumes:
-      - calibre-config:/config
+      - calibreweb-config:/config
       - media_books:/books
 
   calibreserver:
