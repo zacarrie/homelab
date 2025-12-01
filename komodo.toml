@@ -87,16 +87,29 @@ additional_env_files = ["../global-interp.env"]
 ##
 
 [[stack]]
-name = "wgeasy"
+name = "calibre"
 [stack.config]
 server = "Local"
-auto_update = true
-auto_update_all_services = true
 linked_repo = "homelab"
-run_directory = "stacks/easy-wireguard"
+run_directory = "stacks/calibre"
 additional_env_files = ["../global-interp.env"]
 environment = """
-CADDY_PUBLIC_DOMAIN=[[CADDY_PUBLIC_DOMAIN]]
+NFS_DEVICE_MEDIA=[[NFS_DEVICE_MEDIA]]
+NFS_O=[[NFS_O]]
+"""
+
+##
+
+[[stack]]
+name = "vikunja"
+[stack.config]
+server = "Local"
+linked_repo = "homelab"
+run_directory = "stacks/vikunja"
+additional_env_files = ["../global-interp.env"]
+environment = """
+CADDY_PRIVATE_DOMAIN=[[CADDY_PRIVATE_DOMAIN]]
+VIKUNJA_SECRET=[[VIKUNJA_SECRET]]
 """
 
 ##
