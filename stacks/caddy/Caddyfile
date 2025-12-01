@@ -92,6 +92,11 @@ calibreserver.{$CADDY_PRIVATE_DOMAIN} {
     reverse_proxy calibreserver:8080
     import cloudflare
 }
+# vikunja
+vikunja.{$CADDY_PRIVATE_DOMAIN} {
+    reverse_proxy vikunja:3456
+    import cloudflare
+}
 
 #------------------------------------------------
 # main komodo server
