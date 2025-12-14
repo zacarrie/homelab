@@ -179,7 +179,7 @@ services:
       retries: 3
 
   radarr:
-    image: lscr.io/linuxserver/radarr:latest@sha256:c984533510abe0219a70e80d15bd0d212b7df21baa0913759c4ce6cc9092240b
+    image: lscr.io/linuxserver/radarr:latest@sha256:6c0948b42c149e36bb3dbc0b64d36c77b2d3c9dccf1b424c4f72af1e57ba0c21
     pull_policy: ${pull_policy}
     container_name: ${radarr_container_name}
     restart: ${restart}
