@@ -32,6 +32,18 @@ volumes:
       type: nfs
       o: ${NFS_O}
       device: ":${NFS_DEVICE_MEDIA}/downloads"
+  media_downloads_torrents:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: ${NFS_O}
+      device: ":${NFS_DEVICE_MEDIA}/downloads/torrents"
+  media_downloads_usenet:
+    driver: local
+    driver_opts:
+      type: nfs
+      o: ${NFS_O}
+      device: ":${NFS_DEVICE_MEDIA}/downloads/usenet"
   media_tvshows:
     driver: local
     driver_opts:
@@ -124,7 +136,7 @@ services:
       - WEBUI_PORT=${qbittorrent_port_ui}
     volumes:
       - qbittorrent-config:/config
-      - media_downloads/torrents:/media_downloads/torrents
+      - media_downloads_torrents:/media_downloads/torrents
 
   sabnzbd:
     image: lscr.io/linuxserver/sabnzbd:latest@sha256:6e6e7abf7a87436ffccd7df41e64a28df9c530e2be5467339a3f5f0518922b49
@@ -140,7 +152,7 @@ services:
       - TZ=America/Chicago
     volumes:
       - sabnzbd-config:/config
-      - media_downloads/usenet:/media_downloads/usenet
+      - media_downloads_usenet:/media_downloads/usenet
 
   flaresolverr:
     image: ghcr.io/flaresolverr/flaresolverr:latest@sha256:4f4e5f759aa3a9a64305e99188ea1db1ec2944a5e7d290d2b089af5f2f6f48e4
