@@ -19,19 +19,20 @@ services:
     pull_policy: ${pull_policy}
     container_name: ${frigate_container_name}
     restart: ${restart}
-    privileged: true
+    #privileged: true
     stop_grace_period: 30s
     shm_size: "4gb"
-    network_mode: host
-    #ports:
-    #  - "${frigate_container_port8971}:8971"
-    #  - "${frigate_container_port5000}:5000"
-    #  - "${frigate_container_port1984}:1984" 
-    #  - "${frigate_container_port8554}:8554" # RTSP feeds
-    #  - "${frigate_container_port8555}:8555/tcp" # WebRTC over tcp
-    #  - "${frigate_container_port8555}:8555/udp" # WebRTC over udp 
+    #network_mode: host
+    ports:
+      - "${frigate_container_port8971}:8971"
+      - "${frigate_container_port5000}:5000"
+      - "${frigate_container_port1984}:1984" 
+      - "${frigate_container_port8554}:8554" # RTSP feeds
+      - "${frigate_container_port8555}:8555/tcp" # WebRTC over tcp
+      - "${frigate_container_port8555}:8555/udp" # WebRTC over udp 
     volumes:
       - /etc/localtime:/etc/localtime:ro
+      - /sys/:/sys/:ro
       - frigate-config:/config
       - media_recordings:/media/frigate
       - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
@@ -43,5 +44,11 @@ services:
       #- /dev/apex_0:/dev/apex_0 # Passes a PCIe Coral, follow driver instructions here https://coral.ai/docs/m2/get-started/#2a-on-linux
       #- /dev/video11:/dev/video11 # For Raspberry Pi 4B
       - /dev/dri:/dev/dri
+      - /dev/dma_heap:/dev/dma_heap
+      - /dev/rga:/dev/rga
+      - /dev/mpp_service:/dev/mpp_service
+    security_opt:
+      - apparmor=unconfined
+      - systempaths=unconfined
 
 
