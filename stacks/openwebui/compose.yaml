@@ -8,7 +8,7 @@ include:
 
 services:
   openwebui:
-    image: ghcr.io/open-webui/open-webui:latest@sha256:53a4d2fc8c7a7cc620cd18e6fe416ed9940f2db87fddf837e3aa55111bec6995 #https://github.com/open-webui/open-webui/pkgs/container/open-webui/526750706?tag=latest
+    image: ghcr.io/open-webui/open-webui:latest@sha256:000b87a6ae726aa7f6611a0064ba528ba1a6aff6ead5fb3b6c89fd4a5717eb8a #https://github.com/open-webui/open-webui/pkgs/container/open-webui/526750706?tag=latest
     pull_policy: ${pull_policy}
     container_name: ${openwebui_container_name}
     restart: ${restart}
