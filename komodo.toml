@@ -87,6 +87,9 @@ auto_update_all_services = true
 linked_repo = "homelab"
 run_directory = "stacks/openwebui"
 additional_env_files = ["../global-interp.env"]
+environment = """
+CADDY_PRIVATE_DOMAIN=[[CADDY_PRIVATE_DOMAIN]]
+"""
 
 ##
 
