@@ -17,6 +17,6 @@ services:
     ports:
       - "${openwebui_port_8080}:8080"
     environment: 
-      - 'OLLAMA_BASE_URL=https://ollama.zacarrie.com'
+      - 'OLLAMA_BASE_URL=https://ollama.${CADDY_PRIVATE_DOMAIN}'
     volumes:
       - /${docker_dir}/${openwebui_container_name}/data:/app/backend/data
