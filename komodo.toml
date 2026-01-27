@@ -24,6 +24,20 @@ CADDY_CLOUDFLARE_API=[[CADDY_CLOUDFLARE_API]]
 ##
 
 [[stack]]
+name = "calibre"
+[stack.config]
+server = "Local"
+linked_repo = "homelab"
+run_directory = "stacks/calibre"
+additional_env_files = ["../global-interp.env"]
+environment = """
+NFS_DEVICE_MEDIA=[[NFS_DEVICE_MEDIA]]
+NFS_O=[[NFS_O]]
+"""
+
+##
+
+[[stack]]
 name = "frigate"
 [stack.config]
 server = "Local"
@@ -94,20 +108,6 @@ CADDY_PRIVATE_DOMAIN=[[CADDY_PRIVATE_DOMAIN]]
 ##
 
 [[stack]]
-name = "calibre"
-[stack.config]
-server = "Local"
-linked_repo = "homelab"
-run_directory = "stacks/calibre"
-additional_env_files = ["../global-interp.env"]
-environment = """
-NFS_DEVICE_MEDIA=[[NFS_DEVICE_MEDIA]]
-NFS_O=[[NFS_O]]
-"""
-
-##
-
-[[stack]]
 name = "vikunja"
 [stack.config]
 server = "Local"
@@ -128,6 +128,39 @@ server = "Local"
 builder = "Local"
 git_account = "github.wish887@slmail.me"
 repo = "zacarrie/homelab"
+
+##
+
+[[procedure]]
+name = "auto-update-deployment"
+
+[[procedure.config.stage]]
+name = "Stage 1"
+enabled = true
+executions = [
+  { execution.type = "PullRepo", execution.params.repo = "homelab", enabled = true }
+]
+
+[[procedure.config.stage]]
+name = "Stage 2"
+enabled = true
+executions = [
+  { execution.type = "RunSync", execution.params.sync = "homelab", enabled = true }
+]
+
+[[procedure.config.stage]]
+name = "Stage 3"
+enabled = true
+executions = [
+  { execution.type = "CommitSync", execution.params.sync = "homelab", enabled = true }
+]
+
+[[procedure.config.stage]]
+name = "Stage 4"
+enabled = true
+executions = [
+  { execution.type = "BatchDeployStackIfChanged", execution.params.pattern = "*", enabled = true }
+]
 
 ##
 
