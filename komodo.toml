@@ -133,6 +133,8 @@ repo = "zacarrie/homelab"
 
 [[procedure]]
 name = "auto-update-deployment"
+config.schedule = "0 0 0/2 ? * * *"
+config.schedule_format = "Cron"
 
 [[procedure.config.stage]]
 name = "Stage 1"
