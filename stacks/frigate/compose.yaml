@@ -1,4 +1,7 @@
 ---
+include:
+  - ../components/caddy_network.yaml
+
 #networks:
 
 volumes:
@@ -23,6 +26,9 @@ services:
     stop_grace_period: 30s
     shm_size: "4gb"
     #network_mode: host
+    networks:
+      caddy:
+        ipv4_address: 30.30.30.100
     ports:
       - "${frigate_container_port8971}:8971"
       - "${frigate_container_port5000}:5000"
