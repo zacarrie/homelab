@@ -97,6 +97,11 @@ vikunja.{$CADDY_PRIVATE_DOMAIN} {
     reverse_proxy vikunja:3456
     import cloudflare
 }
+# frigate
+frigate.{$CADDY_PRIVATE_DOMAIN} {
+    reverse_proxy frigate:5000
+    import cloudflare
+}
 
 #------------------------------------------------
 # main komodo server
@@ -104,11 +109,6 @@ vikunja.{$CADDY_PRIVATE_DOMAIN} {
 # komodo gui
 komodo.{$CADDY_PRIVATE_DOMAIN} {
     reverse_proxy localhost:9120
-    import cloudflare
-}
-# frigate
-frigate.{$CADDY_PRIVATE_DOMAIN} {
-    reverse_proxy localhost:5000
     import cloudflare
 }
 # wg dashboard
