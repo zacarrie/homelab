@@ -22,7 +22,7 @@ services:
     privileged: true
     stop_grace_period: 30s
     shm_size: "4gb"
-    network_mode: host
+    #network_mode: host
     ports:
       - "${frigate_container_port8971}:8971"
       - "${frigate_container_port5000}:5000"
