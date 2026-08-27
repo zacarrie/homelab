@@ -139,7 +139,7 @@ services:
       - media_downloads_torrents:/media_downloads/torrents
 
   sabnzbd:
-    image: lscr.io/linuxserver/sabnzbd:latest@sha256:fba727f777f6b2633fcdeaea94abc85d73148f2a6b19a8158907bdd5b6e145d0
+    image: lscr.io/linuxserver/sabnzbd:latest@sha256:13d4404f1242f819e0cc2e294def5858def251a3609eb59404dad303075a564a
     pull_policy: ${pull_policy}
     container_name: ${sabnzbd_container_name}
     restart: ${restart}
