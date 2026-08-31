@@ -14,7 +14,7 @@ volumes:
 
 services:
   vikunja:
-    image: vikunja/vikunja@sha256:874c871ced75d1bf5783c8ff56c31a758fdf4343183ecd6ab9c7be0bc83e7d99
+    image: vikunja/vikunja@sha256:417ada6f94e81f0267aa2f007d0a811fc82d38dd2aa58351e3ea520ca01c2ea5
     pull_policy: ${pull_policy}
     container_name: ${vikunja_container_name}
     restart: ${restart}
