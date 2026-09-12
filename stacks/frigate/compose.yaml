@@ -18,7 +18,7 @@ volumes:
 
 services:
   frigate:
-    image: ghcr.io/blakeblackshear/frigate:stable@sha256:cf4305d9f1c673d71c4d0fab30ca56ca05ac91168711a74ee7867a4691a7ad02
+    image: ghcr.io/blakeblackshear/frigate:stable@sha256:9678a83a76e4730ac7d9ea7428370e32ae656d6b312aaad30d6c69f3fef14d35
     pull_policy: ${pull_policy}
     container_name: ${frigate_container_name}
     restart: ${restart}
