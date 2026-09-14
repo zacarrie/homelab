@@ -285,7 +285,7 @@ services:
       - media_music:/music
 
   notifiarr:
-    image: golift/notifiarr:latest@sha256:4180afa7df046312ac1dd08574a9fd23eae0d2828c126f0113314a6b5643cc82
+    image: golift/notifiarr:latest@sha256:2b0a8784d8a43177cbc5a19110e7eb066d9321572c3352eda79c0a89898c7735
     pull_policy: ${pull_policy}
     container_name: ${notifiarr_container_name}
     restart: ${restart}
