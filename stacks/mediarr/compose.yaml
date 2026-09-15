@@ -73,7 +73,7 @@ volumes:
 
 services:
   gluetunmediarr:
-    image: qmcgaw/gluetun:latest@sha256:e3c42d634cfd781639f6b87ed3e606b67dc5d27b90fe5fb8c607d9dc7b4ed63f
+    image: qmcgaw/gluetun:latest@sha256:12df8b20528d4cd5e9b6e827d40f2886cf78e53e7e9afc750050648c31183793
     pull_policy: ${pull_policy}
     container_name: ${gluetunmediarr_container_name}
     restart: ${restart}
