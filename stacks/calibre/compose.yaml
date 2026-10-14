@@ -39,7 +39,7 @@ services:
       - media_books:/books
 
   calibreserver:
-    image: lscr.io/linuxserver/calibre:latest@sha256:6bdf9c42b5223f8c5722896808f33bd725eba84df220c6615ed173b7255451a0
+    image: lscr.io/linuxserver/calibre:latest@sha256:48c8a5ba2a20c303012b1d4b2815a2b99b362a634a571fbec101b85bfa203ba3
     pull_policy: ${pull_policy}
     container_name: ${calibreserver_container_name}
     restart: ${restart}
