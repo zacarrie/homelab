@@ -267,7 +267,7 @@ services:
       - media_anime:/anime
 
   lidarr:
-    image: lscr.io/linuxserver/lidarr:latest@sha256:be65454ba890ad01a93b01cfc178adfa1a397b487bfdce2ac23bd956c473d10d
+    image: lscr.io/linuxserver/lidarr:latest@sha256:d5707cfe084da21a3864c7ef0edd9c0543b5e26c79c551f84dad5ef8683af8c7
     pull_policy: ${pull_policy}
     container_name: ${lidarr_container_name}
     restart: ${restart}
