@@ -40,7 +40,7 @@ volumes:
 
 services:
   homarr:
-    image: ghcr.io/homarr-labs/homarr:latest@sha256:a5c0867d7666d15bd3e728cf8ea48be60dd4542403d2d8bba69342fdb24a1361
+    image: ghcr.io/homarr-labs/homarr:latest@sha256:f7b31d2dee7b14cfaabd78a5e844362ccd736d09c1b5b4d498b0f2d21c0d17d0
     pull_policy: ${pull_policy}
     container_name: ${homarr_container_name}
     restart: ${restart}
