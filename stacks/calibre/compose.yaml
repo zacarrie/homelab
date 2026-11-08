@@ -21,7 +21,7 @@ volumes:
 
 services:
   calibreweb:
-    image: lscr.io/linuxserver/calibre-web:latest@sha256:20e584b010124c27667b8d5cbbfb74e9e673c6f43124b53c0fe2d9459ce3f4ed
+    image: lscr.io/linuxserver/calibre-web:latest@sha256:8eabbc9ac4d7fcbc252434493078ba22e4e8c3aa461e11b102020b040c5fc3e6
     pull_policy: ${pull_policy}
     container_name: ${calibreweb_container_name}
     restart: ${restart}
